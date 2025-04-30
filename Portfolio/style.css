@@ -1,0 +1,253 @@
+:root {
+  --bg-gradient: linear-gradient(to bottom right, #e0f7fa, #ffffff);
+  --text-color: #222;
+  --card-color: #ffffff;
+  --header-footer-color: #003366;
+  --link-color: #ffffff;
+  --accent: #007BFF;
+}
+
+body.dark {
+  --bg-gradient: linear-gradient(to bottom right, #1f1f1f, #121212);
+  --text-color: #eee;
+  --card-color: #1e1e1e;
+  --header-footer-color: #222;
+  --link-color: #eee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  font-size: 18px; /* Medium font size */
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  height: 70px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--header-footer-color);
+  padding: 1rem 2rem;
+  color: var(--link-color);
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a, .nav-links button {
+  text-decoration: none;
+  color: var(--link-color);
+  font-weight: 500;
+  font-size: 1.1rem; /* Medium font size for links */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.section {
+  min-height: 100vh;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.section h1 {
+  font-size: 2.5rem; /* Medium heading size */
+  margin-bottom: 1rem;
+}
+
+.section h2 {
+  font-size: 1.8rem; /* Slightly smaller heading size */
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+}
+
+.section p {
+  font-size: 1.2rem; /* Smaller paragraph text */
+  max-width: 900px;
+}
+
+.content {
+  max-width: 900px;
+  width: 100%;
+}
+
+.card-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: var(--card-color);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  min-width: 250px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  background-color: var(--accent);
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+form input, form textarea {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: var(--card-color);
+  color: var(--text-color);
+}
+
+form button {
+  padding: 1rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#contact {
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.footer {
+  background-color: var(--header-footer-color);
+  color: var(--link-color);
+  padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer .socials {
+  margin-bottom: 0.5rem;
+}
+
+.footer .socials a {
+  margin: 0 12px;
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* ✅ Responsive Fix */
+@media (max-width: 768px) {
+  body, html {
+    font-size: 16px; /* Slightly smaller font size on smaller screens */
+  }
+
+  .section h1 {
+    font-size: 2rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .section p, .card, form input, form textarea {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding-top: 90px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .nav-links a, .nav-links button {
+    font-size: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    background: var(--header-footer-color);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    display: none;
+    padding: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  body, html {
+    font-size: 14px;
+  }
+
+  .section h1 {
+    font-size: 1.6rem;
+  }
+
+  .section h2 {
+    font-size: 1.3rem;
+  }
+
+  .section p {
+    font-size: 0.95rem;
+  }
+
+  .section {
+    padding-top: 80px;
+  }
+}
